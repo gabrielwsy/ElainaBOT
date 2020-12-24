@@ -190,7 +190,7 @@ module.exports = tobz = async (tobz, message) => {
         const isBadword = badword.includes(chatId)
         body = (type === 'chat' && body.startsWith(prefix)) ? body : (((type === 'image' || type === 'video') && caption) && caption.startsWith(prefix)) ? caption : ''
         const arg = body.substring(body.indexOf(' ') + 1)
-        const isKasar = await cariKasar(chats)
+        const isKasar = await cariKasar(chatId)
         const GroupLinkDetector = antilink.includes(chatId)
         const AntiStickerSpam = antisticker.includes(chatId)
         const isPrivate = sender.id === chat.contact.id
